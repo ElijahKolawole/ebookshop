@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Yet Another e-Bookshop</title>
+</head>
+<body>
+  <h2>Yet Another e-Bookshop</h2>
+  <h4>Single Author Query (redirecting out doPost() back to doGet() to hide url query string...</h4>
+<!--   <form method="get" action="http://localhost:9999/ebookshop/query">
+ -->    
+  <form method="post" action="querypost"> <!--Always use relative path like  this to reference your actions so application can run irrespective of environment-->
+
+ Choose an author:<br /><br />
+    <input type="checkbox" name="author" value="Tan Ah Teck" />Ah Teck
+    <input type="checkbox" name="author" value="Mohammad Ali" />Ali
+    <input type="checkbox" name="author" value="Kumar" />Kumar
+    <input type="submit" value="Search" />
+  </form>
+    <a href="/ebookshop">Return to Homepage</a>
+
+</body>
+</html>
