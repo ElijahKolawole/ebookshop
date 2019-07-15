@@ -4,8 +4,11 @@
 </head>
 <body>
   <h2>Yet Another e-Bookshop</h2>
-  <form method="get" action="http://localhost:9999/ebookshop/query">
-    Choose an author:<br /><br />
+<!--   <form method="get" action="http://localhost:9999/ebookshop/query">
+ -->    
+  <form method="get" action="query"> <!--Always use relative path like  this to reference your actions so application can run irrespective of environment-->
+
+ Choose an author:<br /><br />
     <input type="checkbox" name="author" value="Tan Ah Teck" />Ah Teck
     <input type="checkbox" name="author" value="Mohammad Ali" />Ali
     <input type="checkbox" name="author" value="Kumar" />Kumar
