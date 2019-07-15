@@ -34,7 +34,7 @@ public class QueryMultiValueServlet extends HttpServlet {
          // Step 3: Execute a SQL SELECT query
           String[] authors = request.getParameterValues("author");  // Returns an array of Strings
           if (authors == null) {
-            out.println("<h2>No author selected. Please go back to select author(s)</h2><body></html>");
+            out.println("<h2>No author selected. Please go back to select author(s)</h2>");
             return; // Exit doGet()
          }  //else  Okay to perform the database query using the above codes
          String sqlStr = "SELECT * FROM books WHERE author IN (";

@@ -32,6 +32,7 @@ public class QueryMultiParamServlet extends HttpServlet {
          Statement stmt = conn.createStatement();
       ) {
           // Step 3: Execute a SQL SELECT query
+
          String sqlStr = "SELECT * FROM books WHERE author = "
                + "'" + request.getParameter("author") + "'"
                + " AND price < " + request.getParameter("price")
@@ -39,6 +40,10 @@ public class QueryMultiParamServlet extends HttpServlet {
 
          out.println("<h3>Thank you for your query.</h3>");
          out.println("<p>Your SQL statement is: " + sqlStr + "</p>"); // Echo for debugging
+         if (request.getParameter("author") == null) {
+             out.println("<h2>No author selected. Please go back to select author(s)</h2><body></html>");
+             return; // Exit doGet()
+         }
          ResultSet rset = stmt.executeQuery(sqlStr);  // Send the query to the server
 
          // Step 4: Process the query result set
