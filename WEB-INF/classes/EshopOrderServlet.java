@@ -47,8 +47,11 @@ public class EshopOrderServlet extends HttpServlet {
                out.println("<p>" + count + " record updated.</p>");
  
                // Create a transaction recordcust_email, cust_phone
-               sqlStr = "INSERT INTO order_records (id, qty_ordered,cust_name, cust_email, cust_phone ) VALUES ("
-                     + ids[i] + ", 1 , 'name', 'email', 77078945 )";
+               // sqlStr = "INSERT INTO order_records (id, qty_ordered,cust_name, cust_email, cust_phone ) VALUES ("
+               //       + ids[i] + ", 1 , '" + request.getParameter('cust_name')+"', 'email', 77078945 )";
+
+                sqlStr = "INSERT INTO order_records (id, qty_ordered,cust_name, cust_email, cust_phone) VALUES ("
+                     + ids[i] + "," +  1 +",'"+request.getParameter("cust_name")+"','"+ request.getParameter("cust_email")+"',"+ request.getParameter("cust_phone")+"  )";
                out.println("<p>" + sqlStr + "</p>");  // for debugging
                count = stmt.executeUpdate(sqlStr);
                out.println("<p>" + count + " record inserted.</p>");
